@@ -1,0 +1,16 @@
+{
+    "http.proxy": "",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleArgs": [
+        "--ignore=E302,W391,E501,E402"
+    ],
+    "python.formatting.autopep8Args": [
+        "--ignore=E402,E501,E302"
+    ],
+    "code-runner.runInTerminal": true,
+    "files.exclude": {
+        "**/__pycache__": true
+    }
+}
