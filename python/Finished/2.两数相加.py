@@ -4,8 +4,6 @@
 # [2] 两数相加
 #
 
-from Base.ListNode import ListNode
-
 # @lc code=start
 # Definition for singly-linked list.
 # class ListNode(object):
@@ -39,6 +37,9 @@ class Solution(object):
 
 # TEST ONLY
 import unittest
+import sys
+sys.path.append("..")
+from Base.ListNode import ListNode
 
 class SolutionTest(unittest.TestCase):
     @classmethod
