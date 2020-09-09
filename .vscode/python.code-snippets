@@ -21,6 +21,9 @@
 		"body": [
 			"# TEST ONLY",
 			"import unittest",
+			"import sys",
+			"sys.path.append(\"..\")",
+			"from Base.PyVar import *",
 			"",
 			"class SolutionTest(unittest.TestCase):",
 			"    @classmethod",
