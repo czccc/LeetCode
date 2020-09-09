@@ -13,7 +13,6 @@
     "files.exclude": {
         "**/__pycache__": true
     },
-    "python.pythonPath": "C:\\Software\\Miniconda3\\python.exe",
     "python.autoComplete.extraPaths": [
         "python"
     ],
