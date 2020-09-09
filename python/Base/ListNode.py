@@ -9,6 +9,12 @@ class ListNode(object):
             return False
         return self.val == other.val and self.next == other.next
 
+    def __str__(self):
+        return ListNode.print(self, False)
+
+    def __repr__(self):
+        return ListNode.print(self, False)
+
     @staticmethod
     def print(node, enable=True):
         ss = "Linked Node: "
