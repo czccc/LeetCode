@@ -30,7 +30,7 @@ class Solution(object):
         return dummy.next
 # @lc code=end
 
-
+$if2($num(%discnumber%,1)'.',)$if2($num(%tracknumber%,2),' ')
 # TEST ONLY
 import unittest
 import sys
