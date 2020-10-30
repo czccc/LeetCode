@@ -67,5 +67,8 @@
         "scss": "scss --style expanded",
         "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css"
     },
-    "code-runner.fileDirectoryAsCwd": true
+    "code-runner.fileDirectoryAsCwd": true,
+    "python.analysis.extraPaths": [
+        "python"
+    ]
 }
