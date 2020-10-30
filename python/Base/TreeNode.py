@@ -1,4 +1,3 @@
-from .PyVar import *
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
@@ -23,7 +22,7 @@ class TreeNode(object):
 
     @staticmethod
     def build(node_list):
-        if not node_list or node_list[0] == null:
+        if not node_list or node_list[0] is None:
             return None
         root = TreeNode(node_list[0])
         queue = [root]
@@ -48,8 +47,8 @@ class TreeNode(object):
                 queue.append(node.left)
                 queue.append(node.right)
             else:
-                ret.append(null)
-        while ret[-1] is null:
+                ret.append(None)
+        while ret[-1] is None:
             ret.pop()
         return ret
 
@@ -79,7 +78,7 @@ class TreeNodeTest(unittest.TestCase):
         self.assertEqual(p == q, True)
 
     def test_build(self):
-        node_list = [0, 1, 2, null, null, 3, 4]
+        node_list = [0, 1, 2, None, None, 3, 4]
         l1 = TreeNode.build(node_list)
         l2 = p = TreeNode(0)
         p.left = TreeNode(1)
@@ -95,7 +94,7 @@ class TreeNodeTest(unittest.TestCase):
         self.assertEqual(l1, None)
 
     def test_flat(self):
-        node_list = [0, 1, 2, null, null, 3, 4]
+        node_list = [0, 1, 2, None, None, 3, 4]
         l1 = TreeNode.build(node_list)
         self.assertEqual(TreeNode.flat(l1), node_list)
 

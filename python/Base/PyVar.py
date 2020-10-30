@@ -1,5 +1,7 @@
 null = None
 
-from Base.TreeNode import TreeNode
+from .TreeNode import TreeNode
 
-from Base.ListNode import ListNode
+from .ListNode import ListNode
+
+from .TreeNodeWithNext import TreeNodeWithNext
