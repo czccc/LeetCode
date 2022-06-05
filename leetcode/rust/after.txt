@@ -1,0 +1,15 @@
+
+include!("after.rs");
+
+#[cfg(test)]
+mod tests {
+    use super::Solution;
+    #[test]
+    fn test_1() {
+        let func = Solution::two_sum;
+        let args = vec![0, 1];
+        let ret = func(args, 1);
+        let ans = vec![0, 1];
+        assert_eq!(ret, ans);
+    }
+}

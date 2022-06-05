@@ -1,0 +1,133 @@
+{
+  // Place your LeetCode workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Rust Before": {
+    "scope": "rust",
+    "prefix": "lcbefore",
+    "body": ["include!(\"before.rs\");"]
+  },
+  "Rust after": {
+    "scope": "rust",
+    "prefix": "lcafter",
+    "body": [
+      "include!(\"after.rs\");",
+      "",
+      "#[cfg(test)]",
+      "mod tests {",
+      "    use super::Solution;",
+      "    #[test]",
+      "    fn test_1() {",
+      "        let func = Solution::${1:two_sum};",
+      "        let args = true;",
+      "        let ret = func(args);",
+      "        let ans = true;",
+      "        assert_eq!(ret, ans);",
+      "    }",
+      "}"
+    ]
+  },
+  "Rust case": {
+    "scope": "rust",
+    "prefix": "lccase",
+    "body": [
+      "    #[test]",
+      "    fn test_${1:2}() {",
+      "        let func = Solution::${2:two_sum};",
+      "        let args = true;",
+      "        let ret = func(args);",
+      "        let ans = true;",
+      "        assert_eq!(ret, ans);",
+      "    }"
+    ]
+  },
+  "Python Before": {
+    "scope": "python",
+    "prefix": "lcbefore",
+    "body": ["from leetcode.before import *"]
+  },
+  "Python after": {
+    "scope": "python",
+    "prefix": "lcafter",
+    "body": [
+      "from leetcode.after import *",
+      "",
+      "class SolutionTest(unittest.TestCase):",
+      "    @classmethod",
+      "    def setUpClass(cls):",
+      "        cls._func = Solution()${1:.twoSum}",
+      "",
+      "    def test_1(self):",
+      "        args = [${2:}]",
+      "        ans = ${3:True}",
+      "        ret = self._func(*args)",
+      "        self.assertEqual(ret, ans)",
+      "",
+      "if __name__ == \"__main__\":",
+      "    unittest.main(verbosity=2)",
+      ""
+    ]
+  },
+  "Python case": {
+    "scope": "python",
+    "prefix": "lccase",
+    "body": [
+      "    def test_${1:2}(self):",
+      "        args = [${2:}]",
+      "        ans = ${3:True}",
+      "        ret = self._func(*args)",
+      "        self.assertEqual(ret, ans)"
+    ]
+  },
+  "Cpp Before": {
+    "scope": "cpp",
+    "prefix": "lcbefore",
+    "body": ["#include \"before.h\""]
+  },
+  "Cpp after": {
+    "scope": "cpp",
+    "prefix": "lcafter",
+    "body": [
+      "#include \"after.h\"",
+      "",
+      "TEST(Solution, test_1) {",
+      "    Solution s;",
+      "    auto args = true;",
+      "    auto ret = s${1:.twoSum}(args);",
+      "    auto ans = true;",
+      "    EXPECT_EQ(ret, ans);",
+      "}",
+      "",
+      "int main(int argc, char **argv) {",
+      "    ::testing::InitGoogleTest(&argc, argv);",
+      "    return RUN_ALL_TESTS();",
+      "}"
+    ]
+  },
+  "Cpp case": {
+    "scope": "cpp",
+    "prefix": "lccase",
+    "body": [
+      "TEST(Solution, test_${1:2}) {",
+      "    Solution s;",
+      "    auto args = true;",
+      "    auto ret = s${2:.twoSum}(args);",
+      "    auto ans = true;",
+      "    EXPECT_EQ(ret, ans);",
+      "}"
+    ]
+  }
+}

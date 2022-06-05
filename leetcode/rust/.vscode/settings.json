@@ -1,0 +1,17 @@
+{
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "javac $fileName && java $fileNameWithoutExt",
+    // "c": "bear -- clang -Ileetcode/cpp -lgtest $fullFileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
+    "cpp": "bear -- clang++ -Ileetcode/cpp -lgtest $fullFileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
+    "php": "php",
+    "python": ".venv/bin/python -u",
+    "go": "go run",
+    "lua": "lua",
+    "typescript": "ts-node",
+    "scala": "scala",
+    // "rust": "rustc $fileName && ./$fileNameWithoutExt",
+    "rust": "ls -l $fullFileName && cargo test --lib",
+    "haskell": "runhaskell"
+  }
+}

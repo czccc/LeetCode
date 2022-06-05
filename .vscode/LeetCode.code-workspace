@@ -1,0 +1,39 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    },
+    {
+      "path": "../leetcode/rust"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true
+    },
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": ["--ignore=E302,E402,E501,W391"],
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": ["--ignore=E302,E402,E501,W391"],
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.fileDirectoryAsCwd": false,
+    "code-runner.executorMap": {
+      "javascript": "node",
+      "java": "javac $fileName && java $fileNameWithoutExt",
+      // "c": "bear -- clang -Ileetcode/cpp -lgtest $fullFileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
+      "cpp": "bear -- clang++ -Ileetcode/cpp -lgtest -Dgtest_build_samples=ON $fullFileName -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
+      "php": "php",
+      "python": ".venv/bin/python -u",
+      "go": "go run",
+      "lua": "lua",
+      "typescript": "ts-node",
+      "scala": "scala",
+      // "rust": "rustc $fileName && ./$fileNameWithoutExt",
+      "rust": "ln -sf $fullFileName $workspaceRoot/leetcode/rust/src/solution.rs && cd $workspaceRoot/leetcode/rust && cargo test --lib",
+      "haskell": "runhaskell"
+    }
+  }
+}

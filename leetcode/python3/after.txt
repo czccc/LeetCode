@@ -1,0 +1,17 @@
+
+from leetcode.after import *
+
+class SolutionTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls._func = Solution().twoSum
+
+    def test_1(self):
+        args = [[2, 7, 11, 15], 9]
+        ans = [0, 1]
+        ret = self._func(*args)
+        self.assertEqual(ret, ans)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

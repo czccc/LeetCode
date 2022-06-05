@@ -1,0 +1,67 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LeetCode Python Init",
+      "dependsOn": ["LeetCode Python Before", "LeetCode Python After"]
+    },
+    {
+      "label": "LeetCode Python Before",
+      "type": "shell",
+      "command": "sed",
+      "args": [
+        "-i",
+        "s|# @lc code=start|from leetcode.before import *\\n\\n# @lc code=start|",
+        "${file}"
+      ]
+    },
+    {
+      "label": "LeetCode Python After",
+      "type": "shell",
+      "command": "cat",
+      "args": ["leetcode/python3/after.txt", ">>", "${file}"]
+    },
+    {
+      "label": "LeetCode Rust Init",
+      "dependsOn": ["LeetCode Rust Before", "LeetCode Rust After"]
+    },
+    {
+      "label": "LeetCode Rust Before",
+      "type": "shell",
+      "command": "sed",
+      "args": [
+        "-i",
+        "s|// @lc code=start|include!(\"before.rs\");\\n\\n// @lc code=start|",
+        "${file}"
+      ]
+    },
+    {
+      "label": "LeetCode Rust After",
+      "type": "shell",
+      "command": "cat",
+      "args": ["leetcode/rust/after.txt", ">>", "${file}"]
+    },
+    {
+      "label": "LeetCode Cpp Init",
+      "dependsOn": ["LeetCode Cpp Before", "LeetCode Cpp After"]
+    },
+    {
+      "label": "LeetCode Cpp Before",
+      "type": "shell",
+      "command": "sed",
+      "args": [
+        "-i",
+        "s|// @lc code=start|#include \"before.h\"\\n\\n// @lc code=start|",
+        "${file}"
+      ]
+    },
+    {
+      "label": "LeetCode Cpp After",
+      "type": "shell",
+      "command": "cat",
+      "args": ["leetcode/cpp/after.txt", ">>", "${file}"]
+    }
+  ]
+}

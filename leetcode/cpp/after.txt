@@ -1,0 +1,15 @@
+
+#include "after.h"
+
+TEST(Solution, test_1) {
+    Solution s;
+    auto args = vector<int>{0};
+    auto ret = s.twoSum(args, 1);
+    auto ans = vector<int>{0};
+    EXPECT_EQ(ret, ans);
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
