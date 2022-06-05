@@ -11,10 +11,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        seen_once = seen_twice = 0
+        seen_once = seen_twice = t = 0
         for x in nums:
-            seen_once = ~seen_twice & (seen_once ^ x)
+            seen_once = ~t & (seen_once ^ x)
             seen_twice = ~seen_once & (seen_twice ^ x)
+            t = ~seen_twice & (t ^ x)
         return seen_once
 # @lc code=end
 
@@ -38,6 +39,12 @@ class SolutionTest(unittest.TestCase):
 
     def test_2(self):
         args = [[0, 1, 0, 1, 0, 1, 99]]
+        ans = 99
+        cur_ans = self._func(*args)
+        self.assertEqual(cur_ans, ans)
+
+    def test_3(self):
+        args = [[3, 3, 3, 3, 3]]
         ans = 99
         cur_ans = self._func(*args)
         self.assertEqual(cur_ans, ans)
