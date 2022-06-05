@@ -4,6 +4,11 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "LeetCode Finished",
+      "type": "shell",
+      "command": "FILE_NAME=$(echo ${file} | sed \"s|$(dirname $(dirname ${file}))/||\") && mkdir -p Finished/$(dirname ${FILE_NAME}) && mv ${FILE_NAME} Finished/${FILE_NAME}"
+    },
+    {
       "label": "LeetCode Python Init",
       "dependsOn": ["LeetCode Python Before", "LeetCode Python After"]
     },
