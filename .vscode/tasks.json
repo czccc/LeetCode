@@ -10,7 +10,12 @@
     },
     {
       "label": "LeetCode Python Init",
-      "dependsOn": ["LeetCode Python Before", "LeetCode Python After"]
+      "dependsOn": [
+        "LeetCode Python Before",
+        "LeetCode Python Pass",
+        "LeetCode Python After"
+      ],
+      "problemMatcher": []
     },
     {
       "label": "LeetCode Python Before",
@@ -18,7 +23,17 @@
       "command": "sed",
       "args": [
         "-i",
-        "s|# @lc code=start|from leetcode.before import *\\n\\n# @lc code=start|",
+        "s|# @lc code=start|from leetcode.before import *\\n\\n\\n# @lc code=start|",
+        "${file}"
+      ]
+    },
+    {
+      "label": "LeetCode Python Pass",
+      "type": "shell",
+      "command": "sed",
+      "args": [
+        "-i",
+        "s|# @lc code=end|        pass\\n\\n\\n# @lc code=end|",
         "${file}"
       ]
     },
@@ -26,11 +41,18 @@
       "label": "LeetCode Python After",
       "type": "shell",
       "command": "cat",
-      "args": ["leetcode/python3/after.txt", ">>", "${file}"]
+      "args": [
+        "leetcode/python3/after.txt",
+        ">>",
+        "${file}"
+      ]
     },
     {
       "label": "LeetCode Rust Init",
-      "dependsOn": ["LeetCode Rust Before", "LeetCode Rust After"]
+      "dependsOn": [
+        "LeetCode Rust Before",
+        "LeetCode Rust After"
+      ]
     },
     {
       "label": "LeetCode Rust Before",
@@ -46,11 +68,18 @@
       "label": "LeetCode Rust After",
       "type": "shell",
       "command": "cat",
-      "args": ["leetcode/rust/after.txt", ">>", "${file}"]
+      "args": [
+        "leetcode/rust/after.txt",
+        ">>",
+        "${file}"
+      ]
     },
     {
       "label": "LeetCode Cpp Init",
-      "dependsOn": ["LeetCode Cpp Before", "LeetCode Cpp After"]
+      "dependsOn": [
+        "LeetCode Cpp Before",
+        "LeetCode Cpp After"
+      ]
     },
     {
       "label": "LeetCode Cpp Before",
@@ -66,7 +95,11 @@
       "label": "LeetCode Cpp After",
       "type": "shell",
       "command": "cat",
-      "args": ["leetcode/cpp/after.txt", ">>", "${file}"]
+      "args": [
+        "leetcode/cpp/after.txt",
+        ">>",
+        "${file}"
+      ]
     }
   ]
 }
